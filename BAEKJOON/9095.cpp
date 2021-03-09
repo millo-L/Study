@@ -2,27 +2,22 @@
 using namespace std;
 
 int main() {
-	int d[11] = { 0 };
-	int n, num;
-
+	int n, num, d[11] = { 0 };
+	
 	cin >> n;
-
-	d[0] = 1;
-	for (int i = 1; i <= 10; i++) {
-		if (i - 1 >= 0) {
-			d[i] += d[i - 1];
-		}
-		if (i - 2 >= 0) {
-			d[i] += d[i - 2];
-		}
-		if (i - 3 >= 0) {
-			d[i] += d[i - 3];
-		}
-	}
-
-	for (int i = 0; i < n; i++) {
+	d[1] = 1;
+	d[2] = 2;
+	d[3] = 4;
+	
+	while (n > 0) {
 		cin >> num;
+
+		for (int i = 4; i <= num; i++) {
+			d[i] = d[i - 1] + d[i - 2] + d[i - 3];
+		}
+
 		cout << d[num] << "\n";
+		n--;
 	}
 
 	return 0;

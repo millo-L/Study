@@ -2,19 +2,19 @@
 using namespace std;
 
 int main() {
-	int n, d[1001];
+	int d[1001];
+	int n;
 
 	cin >> n;
 
-	d[0] = 1;
 	d[1] = 1;
+	d[2] = 2;
 
-	for (int i = 2; i <= n; i++) {
+	for (int i = 3; i <= n; i++) {
 		d[i] = d[i - 1] + d[i - 2];
-		d[i] %= 10007;
 	}
 
-	cout << d[n];
+	cout << (d[n] % 10007);
 
 	return 0;
 }
