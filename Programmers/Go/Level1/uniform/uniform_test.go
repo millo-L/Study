@@ -3,21 +3,17 @@ package uniform
 import "testing"
 
 func TestUniform(t *testing.T) {
-	result := Solution(5, []int{2, 4}, []int{1, 3, 5})
+	input1 := []int{5, 5, 3}
+	input2 := [][]int{{2, 4}, {2, 4}, {3}}
+	input3 := [][]int{{1, 3, 5}, {3}, {1}}
+	expect := []int{5, 4, 2}
 
-	if result != 5 {
-		t.Errorf("Test1: Wrong result")
-	}
-
-	result = Solution(5, []int{2, 4}, []int{3})
-
-	if result != 4 {
-		t.Errorf("Test2: Wrong result")
-	}
-
-	result = Solution(3, []int{3}, []int{1})
-
-	if result != 2 {
-		t.Errorf("Test3: Wrong result")
+	for i := range input1 {
+		result := Solution(input1[i], input2[i], input3[i])
+		if result != expect[i] {
+			t.Errorf("Test%d: Wrong result", i+1)
+			t.Error("expect:", expect[i])
+			t.Error("result:", result)
+		}
 	}
 }

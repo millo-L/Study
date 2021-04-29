@@ -1,3 +1,4 @@
+// 모의고사
 package mock
 
 func findMax(array []int) (answer int) {

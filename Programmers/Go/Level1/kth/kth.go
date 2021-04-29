@@ -1,3 +1,4 @@
+// K번째수
 package kth
 
 import "sort"

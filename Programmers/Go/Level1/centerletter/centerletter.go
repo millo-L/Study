@@ -1,3 +1,4 @@
+// 가운데 글자 가져오기
 package centerletter
 
 func Solution(s string) string {

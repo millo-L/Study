@@ -1,3 +1,4 @@
+// 체육복
 package uniform
 
 func Solution(n int, lost []int, reserve []int) int {
