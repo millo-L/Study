@@ -3,27 +3,16 @@ package addbetween
 import "testing"
 
 func TestAddbetween(t *testing.T) {
-	result := Solution(3, 5)
+	input1 := []int{3, 3, 5}
+	input2 := []int{5, 3, 3}
+	expect := []int64{12, 3, 12}
 
-	if result != int64(12) {
-		t.Errorf("Test1: Wrong result")
-		t.Errorf("expect: 12")
-		t.Error("result:", result)
-	}
-
-	result = Solution(3, 3)
-
-	if result != int64(3) {
-		t.Errorf("Test2: Wrong result")
-		t.Errorf("expect: 3")
-		t.Error("result:", result)
-	}
-
-	result = Solution(5, 3)
-
-	if result != int64(12) {
-		t.Errorf("Test3: Wrong result")
-		t.Errorf("expect: 12")
-		t.Error("result:", result)
+	for i := range input1 {
+		result := Solution(input1[i], input2[i])
+		if result != expect[i] {
+			t.Errorf("Test%d: Wrong result", i+1)
+			t.Error("expect:", expect[i])
+			t.Error("result:", result)
+		}
 	}
 }

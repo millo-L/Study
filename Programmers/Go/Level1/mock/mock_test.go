@@ -13,6 +13,7 @@ func TestMock(t *testing.T) {
 				t.Errorf("Test%d: Wrong result", i+1)
 				t.Error("expect:", expect[i])
 				t.Error("result:", result)
+				break
 			}
 		}
 	}

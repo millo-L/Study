@@ -1,3 +1,4 @@
+// 내적
 package product
 
 func Solution(a []int, b []int) int {

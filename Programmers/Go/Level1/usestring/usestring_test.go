@@ -3,19 +3,15 @@ package usestring
 import "testing"
 
 func TestUsestring(t *testing.T) {
-	result := Solution("a234")
+	input1 := []string{"a234", "1234"}
+	expect := []bool{false, true}
 
-	if result {
-		t.Errorf("Test1: Wrong result")
-		t.Errorf("expect: false")
-		t.Error("result:", result)
-	}
-
-	result = Solution("1234")
-
-	if !result {
-		t.Errorf("Test2: Wrong result")
-		t.Errorf("expect: true")
-		t.Error("result:", result)
+	for i := range input1 {
+		result := Solution(input1[i])
+		if result != expect[i] {
+			t.Errorf("Test%d: Wrong result", i+1)
+			t.Error("expect:", expect[i])
+			t.Error("result:", result)
+		}
 	}
 }

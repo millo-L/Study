@@ -3,19 +3,19 @@ package stringsort
 import "testing"
 
 func TestStringsort(t *testing.T) {
-	result := Solution([]string{"sun", "bed", "car"}, 1)
+	input1 := [][]string{{"sun", "bed", "car"}, {"abce", "abcd", "cdx"}}
+	input2 := []int{1, 2}
+	expect := [][]string{{"car", "bed", "sun"}, {"abcd", "abce", "cdx"}}
 
-	if len(result) != 3 || result[0] != "car" || result[2] != "sun" {
-		t.Errorf("Test1: Wrong result")
-		t.Errorf("expect: [car bed sun]")
-		t.Error("result:", result)
-	}
-
-	result = Solution([]string{"abce", "abcd", "cdx"}, 2)
-
-	if len(result) != 3 || result[0] != "abcd" || result[2] != "cdx" {
-		t.Errorf("Test2: Wrong result")
-		t.Errorf("expect: [abcd abce cdx]")
-		t.Error("result:", result)
+	for i := range input1 {
+		result := Solution(input1[i], input2[i])
+		for j := range result {
+			if result[j] != expect[i][j] {
+				t.Errorf("Test%d: Wrong result", i+1)
+				t.Error("expect:", expect[i])
+				t.Error("result:", result)
+				break
+			}
+		}
 	}
 }

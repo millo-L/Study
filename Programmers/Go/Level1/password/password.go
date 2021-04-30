@@ -1,16 +1,17 @@
+// 시저 암호
 package password
 
 func Solution(s string, n int) string {
-	strs := make([]rune, len(s))
+	str := []rune(s)
 	offset := rune(n)
-	for i, v := range s {
-		if 'A' <= v && v <= 'Z' {
-			strs[i] = ((v + offset - 'A') % 26) + 'A'
-		} else if 'a' <= v && v <= 'z' {
-			strs[i] = ((v + offset - 'a') % 26) + 'a'
+	for i, value := range str {
+		if 'A' <= value && value <= 'Z' {
+			str[i] = ((value + offset - 'A') % 26) + 'A'
+		} else if 'a' <= value && value <= 'z' {
+			str[i] = ((value + offset - 'a') % 26) + 'a'
 		} else {
-			strs[i] = v
+			str[i] = value
 		}
 	}
-	return string(strs)
+	return string(str)
 }

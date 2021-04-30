@@ -1,3 +1,4 @@
+// 소수 만들기
 package prime
 
 func isPrime(num int) bool {

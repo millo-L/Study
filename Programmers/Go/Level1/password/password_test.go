@@ -3,27 +3,16 @@ package password
 import "testing"
 
 func TestPassword(t *testing.T) {
-	result := Solution("AB", 1)
+	input1 := []string{"AB", "z", "a B z"}
+	input2 := []int{1, 1, 4}
+	expect := []string{"BC", "a", "e F d"}
 
-	if result != "BC" {
-		t.Errorf("Test1: Wrong result")
-		t.Errorf("expect: BC")
-		t.Error("result:", result)
-	}
-
-	result = Solution("z", 1)
-
-	if result != "a" {
-		t.Errorf("Test2: Wrong result")
-		t.Errorf("expect: a")
-		t.Error("result:", result)
-	}
-
-	result = Solution("a B z", 4)
-
-	if result != "e F d" {
-		t.Errorf("Test3: Wrong result")
-		t.Errorf("expect: e F d")
-		t.Error("result:", result)
+	for i := range input1 {
+		result := Solution(input1[i], input2[i])
+		if result != expect[i] {
+			t.Errorf("Test%d: Wrong result", i+1)
+			t.Error("expect:", expect[i])
+			t.Error("result:", result)
+		}
 	}
 }

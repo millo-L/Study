@@ -3,19 +3,15 @@ package watermelon
 import "testing"
 
 func TestWatermelon(t *testing.T) {
-	result := Solution(3)
+	input := []int{3, 4}
+	expect := []string{"수박수", "수박수박"}
 
-	if result != "수박수" {
-		t.Errorf("Test1: Wrong result")
-		t.Errorf("expect: 수박수")
-		t.Error("result:", result)
-	}
-
-	result = Solution(4)
-
-	if result != "수박수박" {
-		t.Errorf("Test2: Wrong result")
-		t.Errorf("expect: 수박수박")
-		t.Error("result:", result)
+	for i := range input {
+		result := Solution(input[i])
+		if result != expect[i] {
+			t.Errorf("Test%d: Wrong result", i+1)
+			t.Error("expect:", expect[i])
+			t.Error("result:", result)
+		}
 	}
 }

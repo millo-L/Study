@@ -1,3 +1,4 @@
+// 두 정수 사이의 합
 package addbetween
 
 func Solution(a int, b int) int64 {
