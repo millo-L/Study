@@ -1,3 +1,4 @@
+// 이상한 문자 만들기
 package strangestring
 
 import "unicode"

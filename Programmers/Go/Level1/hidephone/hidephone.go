@@ -1,3 +1,4 @@
+// 핸드폰 번호 가리기
 package hidephone
 
 func Solution(phone_number string) string {

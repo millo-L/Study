@@ -1,3 +1,4 @@
+// 평균 구하기
 package average
 
 func Solution(arr []int) float64 {

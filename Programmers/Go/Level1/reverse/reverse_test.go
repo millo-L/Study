@@ -3,11 +3,18 @@ package reverse
 import "testing"
 
 func TestReverse(t *testing.T) {
-	result := Solution(12345)
+	input := []int64{12345}
+	expect := [][]int{{5, 4, 3, 2, 1}}
 
-	if len(result) != 5 || result[0] != 5 || result[4] != 1 {
-		t.Errorf("Test1: Wrong result")
-		t.Errorf("expect: [5 4 3 2 1]")
-		t.Error("result:", result)
+	for i := range input {
+		result := Solution(input[i])
+		for j := range result {
+			if result[j] != expect[i][j] {
+				t.Errorf("Test%d: Wrong result", i+1)
+				t.Error("expect:", expect[i])
+				t.Error("result:", result)
+				break
+			}
+		}
 	}
 }

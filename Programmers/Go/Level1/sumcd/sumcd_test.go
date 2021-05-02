@@ -3,19 +3,15 @@ package sumcd
 import "testing"
 
 func TestSumcd(t *testing.T) {
-	result := Solution(12)
+	input := []int{12, 5}
+	expect := []int{28, 6}
 
-	if result != 28 {
-		t.Errorf("Test1: Wrong result")
-		t.Errorf("expect: 28")
-		t.Error("result:", result)
-	}
-
-	result = Solution(5)
-
-	if result != 6 {
-		t.Errorf("Test2: Wrong result")
-		t.Errorf("expect: 6")
-		t.Error("result:", result)
+	for i := range input {
+		result := Solution(input[i])
+		if result != expect[i] {
+			t.Errorf("Test%d: Wrong result", i+1)
+			t.Error("expect:", expect[i])
+			t.Error("result:", result)
+		}
 	}
 }

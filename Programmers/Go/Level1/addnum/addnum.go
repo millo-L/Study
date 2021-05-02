@@ -1,3 +1,4 @@
+// 자릿수 더하기
 package addnum
 
 func Solution(n int) int {

@@ -3,17 +3,18 @@ package smallest
 import "testing"
 
 func TestSmallest(t *testing.T) {
-	result := Solution([]int{4, 3, 2, 1})
-	if len(result) != 3 || result[2] != 2 {
-		t.Errorf("Test1: Wrong result")
-		t.Errorf("expect: [4 3 2]")
-		t.Error("result:", result)
-	}
+	input := [][]int{{4, 3, 2, 1}, {10}}
+	expect := [][]int{{4, 3, 2}, {-1}}
 
-	result = Solution([]int{10})
-	if len(result) != 1 || result[0] != -1 {
-		t.Errorf("Test2: Wrong result")
-		t.Errorf("expect: [-1]")
-		t.Error("result:", result)
+	for i := range input {
+		result := Solution(input[i])
+		for j := range result {
+			if result[j] != expect[i][j] {
+				t.Errorf("Test%d: Wrong result", i+1)
+				t.Error("expect:", expect[i])
+				t.Error("result:", result)
+				break
+			}
+		}
 	}
 }

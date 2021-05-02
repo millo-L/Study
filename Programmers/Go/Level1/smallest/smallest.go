@@ -1,14 +1,13 @@
+// 제일 작은 수 제거하기
 package smallest
 
 func findMinIndex(arr []int) int {
 	index := 0
-	length := len(arr)
-	for i := 1; i < length; i++ {
-		if arr[i] < arr[index] {
+	for i, value := range arr {
+		if arr[index] > value {
 			index = i
 		}
 	}
-
 	return index
 }
 
@@ -17,10 +16,9 @@ func removeIndex(arr []int, index int) []int {
 }
 
 func Solution(arr []int) []int {
-	index := findMinIndex(arr)
-	answer := removeIndex(arr, index)
+	answer := removeIndex(arr, findMinIndex(arr))
 	if len(answer) == 0 {
-		answer = append(answer, -1)
+		return []int{-1}
 	}
 
 	return answer

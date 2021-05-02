@@ -3,17 +3,19 @@ package gcdgcm
 import "testing"
 
 func TestGcdgcm(t *testing.T) {
-	result := Solution(3, 12)
-	if result[0] != 3 || result[1] != 12 {
-		t.Errorf("Test1: Wrong result")
-		t.Errorf("expect: [3, 12]")
-		t.Error("result:", result)
-	}
+	input1 := []int{3, 2}
+	input2 := []int{12, 5}
+	expect := [][]int{{3, 12}, {1, 10}}
 
-	result = Solution(1, 10)
-	if result[0] != 1 || result[1] != 10 {
-		t.Errorf("Test2: Wrong result")
-		t.Errorf("expect: [1, 10]")
-		t.Error("result:", result)
+	for i := range input1 {
+		result := Solution(input1[i], input2[i])
+		for j := range result {
+			if result[j] != expect[i][j] {
+				t.Errorf("Test%d: Wrong result", i+1)
+				t.Error("expect:", expect[i])
+				t.Error("result:", result)
+				break
+			}
+		}
 	}
 }

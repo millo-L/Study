@@ -3,19 +3,15 @@ package addnum
 import "testing"
 
 func TestAddnum(t *testing.T) {
-	result := Solution(123)
+	input := []int{123, 987}
+	expect := []int{6, 24}
 
-	if result != 6 {
-		t.Errorf("Test1: Wrong result")
-		t.Errorf("expect: 6")
-		t.Error("result:", result)
-	}
-
-	result = Solution(987)
-
-	if result != 24 {
-		t.Errorf("Test1: Wrong result")
-		t.Errorf("expect: 24")
-		t.Error("result:", result)
+	for i := range input {
+		result := Solution(input[i])
+		if result != expect[i] {
+			t.Errorf("Test%d: Wrong result", i+1)
+			t.Error("expect:", expect[i])
+			t.Error("result:", result)
+		}
 	}
 }

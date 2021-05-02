@@ -1,3 +1,4 @@
+// 콜라츠 추측
 package collatz
 
 func Solution(num int) int {

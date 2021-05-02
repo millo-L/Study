@@ -3,19 +3,15 @@ package evenodd
 import "testing"
 
 func TestEvenodd(t *testing.T) {
-	result := Solution(3)
+	input := []int{3, 4}
+	expect := []string{"Odd", "Even"}
 
-	if result != "Odd" {
-		t.Errorf("Test1: Wrong result")
-		t.Errorf("expect: Odd")
-		t.Error("result:", result)
-	}
-
-	result = Solution(4)
-
-	if result != "Even" {
-		t.Errorf("Test2: Wrong result")
-		t.Errorf("expect: Even")
-		t.Error("result:", result)
+	for i := range input {
+		result := Solution(input[i])
+		if result != expect[i] {
+			t.Errorf("Test%d: Wrong result", i+1)
+			t.Error("expect:", expect[i])
+			t.Error("result:", result)
+		}
 	}
 }

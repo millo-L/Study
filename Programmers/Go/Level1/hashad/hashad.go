@@ -1,3 +1,4 @@
+// 하샤드 수
 package hashad
 
 func Solution(x int) bool {

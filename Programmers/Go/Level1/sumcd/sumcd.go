@@ -1,3 +1,4 @@
+// 약수의 합
 package sumcd
 
 func Solution(n int) int {
